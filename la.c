@@ -17,10 +17,14 @@ int main() {
     int i = 0, j = 0;
 
     printf("Enter a statement: ");
-    gets(input);
+    fgets(input, sizeof(input), stdin);
+
+    // Remove newline character added by fgets
+    input[strcspn(input, "\n")] = '\0';
 
     while (input[i] != '\0') {
 
+        // IDENTIFIER or KEYWORD
         if (isalpha(input[i])) {
             j = 0;
             while (isalnum(input[i])) {
@@ -34,6 +38,7 @@ int main() {
                 printf("%s : Identifier\n", token);
         }
 
+        // NUMBER
         else if (isdigit(input[i])) {
             j = 0;
             while (isdigit(input[i])) {
@@ -43,16 +48,19 @@ int main() {
             printf("%s : Number\n", token);
         }
 
+        // OPERATOR
         else if (strchr("+-*/=<>", input[i])) {
             printf("%c : Operator\n", input[i]);
             i++;
         }
 
+        // SPECIAL SYMBOL
         else if (strchr(";,(){}", input[i])) {
             printf("%c : Special Symbol\n", input[i]);
             i++;
         }
 
+        // IGNORE SPACES / UNKNOWN
         else {
             i++;
         }
