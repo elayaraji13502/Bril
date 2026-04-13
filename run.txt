@@ -1,0 +1,112 @@
+1.Symbol table
+
+nano Symbol.c
+gcc Symbol.c -o Symbol
+./Symbol
+
+2.Lexical Analyser using C Progiren.
+
+nano la. c
+gcc la.c -o la
+./la
+
+3.NFA to identifier, Keyword.
+
+nano nfa.c
+gcc nfa.c -o nfa
+./nfa
+
+4. Lexical Analyser.
+
+nano la.l
+flex la.l
+gec lexyy.c -la -1f1
+./la
+
+5. a) valid or Invalid Expr
+
+nano expr.l
+nano expr.y
+lex expr.l
+yacc-d expr.y
+gcc lex.yy.c y.tab.c -o expr
+./expr
+
+5. b) valid variable
+
+nano Var.l
+nano Var.y 
+lex var.l
+yacc -d var.y 
+gcc lex.yy.c y tab.c-o var
+./var
+
+5. c)calculator
+
+nano Calc.l
+nano calc.y
+bison -d calc.y
+flex calc.l
+gcc lex.yy.c calc.tab.c -o calc -lfl
+./calc
+
+6. LL(1) Parser
+
+nano ll1.c
+gcc ll1.c ll1
+./ll1
+
+7.lalr
+
+nano lalr.l
+nano lalr.y
+nano table.c
+bison -d -v lalr.y
+flex lalr.l
+gcc lex.yy.c lalr.tab.c -o parser -lfl
+./parser
+gcc table.c -o table
+./table
+
+8.Syntax tree
+
+nano syntax.l
+nano syntax.y
+nano ast.h
+bison -d syntax.y
+flex syntax.l
+gcc lex.yy.c syntax.tab.c -o ast -lfl
+./ast
+
+9.three address code
+
+nano three.l
+nano three.y
+bison -d three.y
+flex three.l
+gcc lex.yy.c three.tab.c -o three -lfl
+./three
+
+10.Stack and heap
+
+nano heap.c
+gcc heap.c -o heap
+./heap
+
+11.code optimization
+
+nano opti.c
+gcc opti.c -o opti
+./opti
+
+12.flow graph
+
+nano flow.c
+gcc flow.c -o flow
+./flow
+
+13.8086
+
+nano 8086.c
+gcc 8086.c -o 8086
+./8086
