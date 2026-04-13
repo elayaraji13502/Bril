@@ -1,7 +1,7 @@
 %{
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int temp = 1;
 
@@ -16,8 +16,7 @@ void yyerror(const char *s);
 int yylex();
 %}
 
-/* 🔥 Important for header consistency */
-%union{
+%union {
     char *str;
 }
 
