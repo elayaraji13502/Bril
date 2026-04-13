@@ -1,8 +1,8 @@
 %{
-#include "three.tab.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
+#include "y.tab.h"
 %}
 
 %%
@@ -16,11 +16,15 @@
 "/"            { return '/'; }
 "="            { return '='; }
 ";"            { return ';'; }
+"("            { return '('; }
+")"            { return ')'; }
 
-[ \t\n]+       ;   
+[ \t\n]+       ;   // ignore whitespace
 
 .              { return yytext[0]; }
 
 %%
 
-int yywrap() { return 1; }
+int yywrap() {
+    return 1;
+}
